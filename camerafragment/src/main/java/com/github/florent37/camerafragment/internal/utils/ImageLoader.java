@@ -5,12 +5,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.Point;
-import android.media.ExifInterface;
+
+import androidx.annotation.NonNull;
+import androidx.exifinterface.media.ExifInterface;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Process;
-import android.support.annotation.NonNull;
 import android.view.Display;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;

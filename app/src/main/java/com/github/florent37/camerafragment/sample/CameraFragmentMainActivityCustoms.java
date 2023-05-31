@@ -6,13 +6,14 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresPermission;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresPermission;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.view.ViewCompat;
 
 import com.github.florent37.camerafragment.CameraFragment;
 import com.github.florent37.camerafragment.CameraFragmentApi;
@@ -25,7 +26,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -37,14 +38,14 @@ public class CameraFragmentMainActivityCustoms extends AppCompatActivity {
 
     public static final String FRAGMENT_TAG = "camera";
 
-    @Bind(R.id.settings_view) Button settingsView;
-    @Bind(R.id.flash_switch_view) Button flashSwitchView;
-    @Bind(R.id.front_back_camera_switcher) Button cameraSwitchView;
-    @Bind(R.id.record_button) Button recordButton;
-    @Bind(R.id.photo_video_camera_switcher) Button mediaActionSwitchView;
+    @BindView(R.id.settings_view) Button settingsView;
+    @BindView(R.id.flash_switch_view) Button flashSwitchView;
+    @BindView(R.id.front_back_camera_switcher) Button cameraSwitchView;
+    @BindView(R.id.record_button) Button recordButton;
+    @BindView(R.id.photo_video_camera_switcher) Button mediaActionSwitchView;
 
-    @Bind(R.id.cameraLayout) View cameraLayout;
-    @Bind(R.id.addCameraButton) View addCameraButton;
+    @BindView(R.id.cameraLayout) View cameraLayout;
+    @BindView(R.id.addCameraButton) View addCameraButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

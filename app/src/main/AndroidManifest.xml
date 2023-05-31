@@ -1,5 +1,8 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.github.florent37.camerafragment.sample">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
@@ -29,7 +32,8 @@
         <activity
             android:name="com.github.florent37.camerafragment.sample.CameraFragmentMainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/ThemeFullscreen" >
+            android:theme="@style/ThemeFullscreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

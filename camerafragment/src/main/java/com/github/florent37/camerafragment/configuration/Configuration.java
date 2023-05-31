@@ -1,7 +1,8 @@
 package com.github.florent37.camerafragment.configuration;
 
-import android.support.annotation.IntDef;
-import android.support.annotation.IntRange;
+
+import androidx.annotation.IntDef;
+import androidx.annotation.IntRange;
 
 import java.io.Serializable;
 import java.lang.annotation.Retention;
@@ -81,13 +82,13 @@ public final class Configuration implements Serializable {
     }
 
     @MediaAction
-    private int mediaAction = -1;
+    private int mediaAction = Configuration.MEDIA_ACTION_VIDEO;
 
     @MediaQuality
-    private int mediaQuality = -1;
+    private int mediaQuality = Configuration.MEDIA_QUALITY_AUTO;
 
     @CameraFace
-    private int cameraFace = -1;
+    private int cameraFace = Configuration.CAMERA_FACE_FRONT;
 
     private int videoDuration = -1;
 
