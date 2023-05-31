@@ -1,25 +1,43 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
 
 android {
-    compileSdkVersion project.sdk
-    buildToolsVersion project.buildTools
+    namespace "com.github.florent37.camerafragment"
+    compileSdk 33
 
     defaultConfig {
-        minSdkVersion project.minSdk
-        targetSdkVersion project.sdk
+        minSdk 24
+        targetSdk 33
 
-        versionCode 1
-        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 }
 
 dependencies {
-    compile "com.android.support:support-v4:" + project.supportVersion
-    compile "com.android.support:appcompat-v7:" + project.supportVersion
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.4'
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.exifinterface:exifinterface:1.3.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
 
 
@@ -37,7 +55,7 @@ ext {
     siteUrl = 'https://github.com/florent37/CameraFragment'
     gitUrl = 'https://github.com/florent37/CameraFragment.git'
 
-    libraryVersion = rootProject.ext.libraryVersion
+    libraryVersion = "1.0.10"
 
     developerId = 'florent37'
     developerName = 'Florent Champigny'
@@ -47,6 +65,3 @@ ext {
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
     allLicenses = ["Apache-2.0"]
 }
-
-apply from: rootProject.file('gradle/install-v1.gradle')
-apply from: rootProject.file('gradle/bintray-android-v1.gradle')
